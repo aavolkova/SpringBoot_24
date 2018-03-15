@@ -2,37 +2,56 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
       <!--xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">-->
-<head>
-    <meta charset="UTF-8"/>
-    <title>Title</title>
-</head>
+<head th:replace="base :: headstuff"></head>
 <body>
 <!--<h2>It worked!</h2>-->
-<h2>Insecure Page</h2>
+<nav th:replace="base :: navbar"></nav>
 
-    <div sec:authorize="isAuthenticated()">
-        This content is only shown to authenticated users.<br/>
-        <div sec:authorize="hasAuthority('ROLE_ADMIN')">
-            This content is only shown to administrations.
-        </div>
-        <div sec:authorize="hasAuthority('ROLE_USERS')">
-            This content is only shown to users.>
-        </div>
-        Logged user: <span sec:authentication="name">The value of the "name"
+<div class="container">
+    <div clas="jumbotron">
+
+
+
+        <h2>Insecure Page</h2>
+
+        <div sec:authorize="isAuthenticated()">
+            This content is only shown to authenticated users.<br/>
+            <div sec:authorize="hasAuthority('ROLE_ADMIN')">
+                This content is only shown to administrations.
+            </div>
+            <div sec:authorize="hasAuthority('ROLE_USERS')">
+                This content is only shown to users.>
+            </div>
+            Logged user: <span sec:authentication="name">The value of the "name"
                         property of the authentication object should appear here.</span><br/>
-        Roles: <span sec:authentication="principal.authorities">[ROLE_USER, ROLE_ADMIN]</span><br/><br/>
+            Roles: <span sec:authentication="principal.authorities">[ROLE_USER, ROLE_ADMIN]</span><br/><br/>
+        </div>
+
+        <div sec:authorize="isAnonymous()">
+            This content is only shown to anonymous users.
+        </div>
+
+        <a href="/logout">Login</a> -
+        <a href="/logout">Logout</a> -
+        <a href="/register">Register</a> -
+        <a href="/secure">Secure Page</a>
+
+        <p th:text="${message}"></p>
+
+
+
+
+
     </div>
+</div>
 
-    <div sec:authorize="isAnonymous()">
-        This content is only shown to anonymous users.
-    </div>
 
-    <a href="/logout">Login</a> -
-    <a href="/logout">Logout</a> -
-    <a href="/register">Register</a> -
-    <a href="/secure">Secure Page</a>
 
-<p th:text="${message}"></p>
 
+
+
+
+<nav th:replace="base :: footer"></nav>
+<th:block th:replace="base :: jslinks"></th:block>
 </body>
 </html>

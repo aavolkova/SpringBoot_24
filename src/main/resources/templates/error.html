@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<!--<head>-->
+    <!--<meta charset="UTF-8"/>-->
+    <!--<title>Title</title>-->
+<!--</head>-->
+
+<head th:replace="base :: headstuff"></head>
+
+<body>
+    <nav th:replace="base :: navbar"></nav>
+
+    <div class="container">
+        <div clas="jumbotron">
+
+     <h1>You are reached the Secure Page</h1>
+    <h2>Error. Page not found</h2>
+
+
+
+            <p><a class="btn btn-primary btn-lg" href="/" role="button">Go to Home</a></p>
+        </div>
+    </div>
+    <nav th:replace="base :: footer"></nav>
+    <th:block th:replace="base :: jslinks"></th:block>
+</body>
+</html>
