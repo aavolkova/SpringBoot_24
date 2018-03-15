@@ -16,6 +16,19 @@ public class Role {
     @ManyToMany(mappedBy = "roles")//, fetch = FetchType.LAZY)
     private Collection<User> users;
 
+
+
+    //==== Default Constructor ====
+    public Role() {
+    }
+
+
+    //==== Constructor ====
+    public Role(String role) {
+        this.role = role;
+    }
+
+
     public long getId() {
         return id;
     }

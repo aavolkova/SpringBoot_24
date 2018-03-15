@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 @Service
 public class UserService {
+
     @Autowired
     UserRepository userRepository;
 
