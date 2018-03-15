@@ -9,3 +9,14 @@ INSERT INTO USER_DATA_ROLES VALUES(1,1);
 INSERT INTO USER_DATA_ROLES VALUES(2,1);
 INSERT INTO USER_DATA_ROLES VALUES(3,1);
 INSERT INTO USER_DATA_ROLES VALUES(3,2);
+
+
+
+
+
+select * 
+from USER_DATA;
+ID  	EMAIL  		ENABLED  	FIRST_NAME  	LAST_NAME  	PASSWORD  	USERNAME  
+1	jim@jim.com	TRUE		Jim		Jimmerson	password	jim
+2	jbob@bob.com	TRUE		Bob		Bobberson	password	bob
+3	admin@admin.com	TRUE		Admin		User		password	admin
